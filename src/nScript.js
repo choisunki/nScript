@@ -43,4 +43,65 @@
 		// @ * Mozilla FireFox
 		,isFF: (_ua.indexOf('FIREFOX')>-1)
 	});
+
+	// @ 140107 Choi Sunki
+	// @ background Show/Hide
+	// @ $(obj).nholder();
+	$.fn.nholder = function(options){
+		return this.each(function(){
+			$(this).bind({
+				'focusin':function(){
+					$(this).addClass('clearHolder')
+				},
+				'focusout':function(){
+					var len = $(this).val().length;
+					len > 0 ? $(this).addClass('clearHolder') : $(this).removeClass('clearHolder');
+				}
+			})
+		});
+	};
+
+	$.fn.nswap = function(){
+		return this.each(function(){
+			var img = $(this).children('img')
+				,oimg = img.attr('src');
+
+			// @ _off 일때만 swap
+			var offimg = $(this).children('img[src*="_off."]');
+			offimg.hover(function(){
+				$(this).attr('src',oimg.replace('_off.','_on.'));
+			},function(){
+				$(this).attr('src',oimg.replace('_on.','_off.'));
+			});
+
+		});
+	};
+
+	$.fn.ntoggle = function(){
+		return this.each(function(){
+			if(!$(this).hasClass('ntgwrap')) $(this).addClass('ntgwrap');
+
+			var __wrap = $(this);
+			var __trigger	= __wrap.find('.explab');
+			var __expander	= __wrap.find('.expand');
+
+			if(!__expander.is(':hidden')) __expander.hide();
+
+			__trigger.bind('click',function(e){
+				e.preventDefault();
+
+				if(!$(this).hasClass('on')) {
+					__wrap.addClass('on');
+					__trigger.addClass('on');
+					__expander.addClass('on');
+					if(__expander.is(':hidden')) __expander.show();
+				} else {
+					__wrap.removeClass('on');
+					__trigger.removeClass('on');
+					__expander.removeClass('on');
+					if(!__expander.is(':hidden')) __expander.hide();
+				}
+			})
+		});
+	};
 })(jQuery);
