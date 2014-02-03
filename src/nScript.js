@@ -1,3 +1,6 @@
 /*
 	nScript
 */
+(function($){
+
+})(jQuery);
