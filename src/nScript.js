@@ -75,6 +75,8 @@
 		return this.each(function(){
 			var img = $(this).children('img')
 				,oimg = img.attr('src');
+			
+			var $pause = options.pauseFunc == true ? 0:1;
 
 			// @ _off 일때만 swap
 			var offimg = $(this).children('img[src*="' + options.offClass + '."]');
@@ -94,7 +96,7 @@
 					$(this).children().attr('src',oimg.replace('' + options.onClass + '.','' + options.offClass + '.'));
 				}
 			})
-
+			.end();
 		});
 	};
 
