@@ -1,7 +1,6 @@
-/*
-	nScript
-*/
-(function($){
+/* nScript Javascript Box v0.1.2 | on jQuery(version 1.8.1) | Choi Sunki <iru@nate.com> */
+
+;(function($){
 	var _ua = navigator.userAgent.toUpperCase();
 	$.extend($.browser,{
 		// @ Mobile WebDevice
