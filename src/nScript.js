@@ -61,22 +61,47 @@
 		});
 	};
 
-	$.fn.nswap = function(){
+	// @ 140107 Choi Sunki
+	// @ Swap Image
+	// @ $(obj).nswap();
+	// @ 14026 | KeyBoard event add | CSK
+	$.fn.nswap = function(opts){
+		var defaults = {
+			onClass		: '_on'
+			,offClass	: '_off'
+		};
+
+		var options = $.extend(defaults, opts);
+
 		return this.each(function(){
 			var img = $(this).children('img')
 				,oimg = img.attr('src');
 
 			// @ _off 일때만 swap
-			var offimg = $(this).children('img[src*="_off."]');
-			offimg.hover(function(){
-				$(this).attr('src',oimg.replace('_off.','_on.'));
-			},function(){
-				$(this).attr('src',oimg.replace('_on.','_off.'));
-			});
+			var offimg = $(this).children('img[src*="' + options.offClass + '."]');
+	
+			offimg.bind('mouseenter mouseleave',function(e){
+				// Mouse Event
+				if(e.type === 'mouseenter') {
+					$(this).attr('src',oimg.replace('' + options.offClass + '.','' + options.onClass + '.'));
+				} else if(e.type === 'mouseleave') {
+					$(this).attr('src',oimg.replace('' + options.onClass + '.','' + options.offClass + '.'));
+				}
+			}).parent().bind('focusin focusout',function(e){
+				// KeyBoard Event
+				if(e.type === 'focusin') {
+					$(this).children().attr('src',oimg.replace('' + options.offClass + '.','' + options.onClass + '.'));
+				} else if(e.type === 'focusout') {
+					$(this).children().attr('src',oimg.replace('' + options.onClass + '.','' + options.offClass + '.'));
+				}
+			})
 
 		});
 	};
 
+	// @ 140107 Choi Sunki
+	// @ Toggle Event
+	// @ $(obj).ntoggle();
 	$.fn.ntoggle = function(){
 		return this.each(function(){
 			if(!$(this).hasClass('ntgwrap')) $(this).addClass('ntgwrap');
