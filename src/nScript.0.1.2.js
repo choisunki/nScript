@@ -130,4 +130,30 @@
 			})
 		});
 	};
+
+	// @ 14026 Choi Sunki
+	// @ tabUIO Event
+	// @ $(obj).tabUIO();
+	$.fn.tabUIO = function(opts){
+		var defaults = {
+			tabs		: '.tabs a'
+			,pans		: '.pans'
+			,actClass	: 'active'
+		};
+
+		var options = $.extend(defaults, opts);
+
+		return this.each(function(){
+			var _wrap	= $(this)
+				,_tabs	= _wrap.find(options.tabs)
+				,_pans	= _wrap.find(options.pans);
+
+			_tabs.on('click',function(e){
+				e.preventDefault();
+				var idx = $(this).parent().index();
+				_tabs.parent().removeClass(options.actClass).eq(idx).addClass(options.actClass);
+				_pans.removeClass(options.actClass).eq(idx).addClass(options.actClass);
+			})
+		});
+	};
 })(jQuery);
