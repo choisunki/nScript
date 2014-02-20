@@ -12,7 +12,7 @@
 
 ;(function($){
 	var _ua = navigator.userAgent.toUpperCase();
-	//alert(_ua)
+	
 	$.extend($.browser,{
 		// @ Mobile WebDevice
 		// @ * Common
