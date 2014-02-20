@@ -109,7 +109,7 @@
 			
 			var $pause = options.pauseFunc == true ? 0:1;
 
-			// @ _off �쇰븣留� swap
+			// @ _off 일때만 swap
 			var offimg = $(this).children('img[src*="' + options.offClass + '."]');
 	
 			offimg.bind('mouseenter mouseleave',function(e){
