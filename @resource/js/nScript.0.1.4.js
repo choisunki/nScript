@@ -22,7 +22,7 @@
 		,isAndroid : (_ua.indexOf("ANDROID") > -1)
 		// @ * * Samsung | Galaxy
 		// @ * * GalaxyS
-		,isGals : (_ua.indexOf("SHW-M250") > -1)
+		,isGals : (_ua.indexOf("SHW-M110") > -1)
 		// @ * * GalaxyS2
 		,isGals2 : (_ua.indexOf("SHW-M250") > -1)
 		// @ * * GalaxyS3
