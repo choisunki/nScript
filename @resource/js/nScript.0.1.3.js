@@ -72,17 +72,6 @@
 		,isOP: (_ua.indexOf('OPERA')>-1)
 		// @ * Mozilla FireFox
 		,isFF: (_ua.indexOf('FIREFOX')>-1)
-		,emSet	: function(opts){
-			defaults = {
-				emMode		: true
-				,designX	: 640
-			};
-			
-			var options = $.extend(defaults, opts);
-			if(this.emMode == true) {
-				console.log('start emmode')
-			}
-		}
 	});
 
 	// @ 140107 Choi Sunki
