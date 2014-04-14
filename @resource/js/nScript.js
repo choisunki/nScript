@@ -9,10 +9,11 @@
 /* update | $.browser.isIOS			| 140219 */
 /* update | $.browser.isIpad		| 140219 */
 /* update | $.browser.isIpot		| 140219 */
+/* update | $.browser.isGals		| 140310 */
 
 ;(function($){
 	var _ua = navigator.userAgent.toUpperCase();
-	//alert(_ua)
+	
 	$.extend($.browser,{
 		// @ Mobile WebDevice
 		// @ * Common
@@ -20,6 +21,8 @@
 		// @ * Mobile	| Android
 		,isAndroid : (_ua.indexOf("ANDROID") > -1)
 		// @ * * Samsung | Galaxy
+		// @ * * GalaxyS
+		,isGals : (_ua.indexOf("SHW-M110") > -1)
 		// @ * * GalaxyS2
 		,isGals2 : (_ua.indexOf("SHW-M250") > -1)
 		// @ * * GalaxyS3
@@ -72,17 +75,6 @@
 		,isOP: (_ua.indexOf('OPERA')>-1)
 		// @ * Mozilla FireFox
 		,isFF: (_ua.indexOf('FIREFOX')>-1)
-		,emSet	: function(opts){
-			defaults = {
-				emMode		: true
-				,designX	: 640
-			};
-			
-			var options = $.extend(defaults, opts);
-			if(this.emMode == true) {
-				console.log('start emmode')
-			}
-		}
 	});
 
 	// @ 140107 Choi Sunki
