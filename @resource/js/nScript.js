@@ -82,6 +82,7 @@
 			};
 			
 			var options = $.extend(defaults, opts);
+			console.log('start emmode')
 			if(this.emMode == true) {
 				console.log('start emmode')
 			}
