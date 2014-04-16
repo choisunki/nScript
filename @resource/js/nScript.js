@@ -13,7 +13,7 @@
 
 ;(function($){
 	var _ua = navigator.userAgent.toUpperCase();
-	
+
 	$.extend($.browser,{
 		// @ Mobile WebDevice
 		// @ * Common
@@ -77,15 +77,30 @@
 		,isFF: (_ua.indexOf('FIREFOX')>-1)
 		,emSet	: function(opts){
 			defaults = {
-				emMode		: true
-				,designX	: 640
+				emMode			: true
+				,designWidth	: 640
 			};
-			
+
 			var options = $.extend(defaults, opts);
-			console.log('start emmode')
-			if(this.emMode == true) {
-				console.log('start emmode')
-			}
+
+			//console.log('start emmode')
+
+			if(options.emMode === true) {
+				var resized = function(){
+					// Variabled.
+					var windowWidth		= wx = $(window).width()
+						,designWidht	= ex = options.designWidth
+						,deviceWidth	= dx = wx
+						,em			= dx / ex
+						,px			= em * 16;
+
+					// Defiend.
+					$('body').css('font-size', px + 'px');
+				};
+
+				$(window).resize(resized);
+				$(document).ready(resized);
+			};
 		}
 	});
 
@@ -121,12 +136,12 @@
 		return this.each(function(){
 			var img = $(this).children('img')
 				,oimg = img.attr('src');
-			
+
 			var $pause = options.pauseFunc == true ? 0:1;
 
 			// @ _off 일때만 swap
 			var offimg = $(this).children('img[src*="' + options.offClass + '."]');
-	
+
 			offimg.bind('mouseenter mouseleave',function(e){
 				// Mouse Event
 				if(e.type === 'mouseenter') {
