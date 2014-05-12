@@ -1,16 +1,4 @@
-/* nScript Javascript Box v0.1.3 | on jQuery(version 1.8.1) | Choi Sunki <iru@nate.com> */
-/* update | $.browser.isAndroid		| 140219 */
-/* update | $.browser.isGals3		| 140219 */
-/* update | $.browser.isGalNote3	| 140219 */
-/* update | $.browser.isGalNote3lg	| 140219 */
-/* update | $.browser.isGalNote3kt	| 140219 */
-/* update | $.browser.isGalNote3sk	| 140219 */
-/* update | $.browser.isGalNote3lg	| 140219 */
-/* update | $.browser.isIOS			| 140219 */
-/* update | $.browser.isIpad		| 140219 */
-/* update | $.browser.isIpot		| 140219 */
-/* update | $.browser.isGals		| 140310 */
-
+/* nScript Javascript Box v0.1.5 | on jQuery(version 1.8.1) | Choi Sunki <iru@nate.com> */
 ;(function($){
 	var _ua = navigator.userAgent.toUpperCase();
 	// alert(_ua)
@@ -87,8 +75,7 @@
 
 			var options = $.extend(defaults, opts);
 
-			//console.log('start emmode')
-
+			// start emmode
 			if(options.emMode === true) {
 				var resized = function(){
 					// Variabled.
