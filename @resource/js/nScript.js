@@ -17,7 +17,7 @@
 ;(function($){
 	var _ua = navigator.userAgent.toUpperCase();
 
-	alert(_ua)
+	// alert(_ua)
 
 	$.extend($.browser,{
 		// @ Mobile WebDevice
