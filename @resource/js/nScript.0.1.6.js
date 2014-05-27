@@ -11,7 +11,6 @@
 /* update | $.browser.isIpot		| 140219 */
 /* update | $.browser.isGals		| 140310 */
 /* update | checknum				| 140527 */
-/* update | altClass				| 140527 */
 /* update | isLGOptimusLTE			| 140527 */
 
 ;(function($){
