@@ -150,7 +150,7 @@
 
 	// @ Orentation Change
 	// 2014-05-30
-	$.extend(window.prototype, {
+	$.extend({
 		nOrient: function(f){
 			if(typeof f == 'function') $(window).bind('orientationchange',f);
 			else throw new Error('[f] is not a function, Please confirm');
