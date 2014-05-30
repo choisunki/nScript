@@ -148,6 +148,16 @@
 		}
 	});
 
+	// @ Orentation Change
+	// 2014-05-30
+	$.extend({
+		nOrient: function(f){
+			if(typeof f == 'function') $(window).bind('orientationchange',f);
+			else throw new Error('[f] is not a function, Please confirm');
+		}
+	});
+
+
 	// @ 140107 Choi Sunki
 	// @ background Show/Hide
 	// @ $(obj).nholder();
