@@ -19,11 +19,7 @@
 ;(function($){
 	var _ua = navigator.userAgent.toUpperCase();
 
-	// alert(_ua)
-
-	var $.ua = $.extend({
-		return navigator.userAgent.toUpperCase();
-	})
+	alert(_ua)
 
 	$.extend($.browser,{
 		// @ Mobile WebDevice
@@ -61,6 +57,7 @@
 		,isGalNote3lg : (_ua.indexOf("SM-N900L") > -1)
 		,isGalNote3kt : (_ua.indexOf("SM-N900K") > -1)
 		,isGalNote3sk : (_ua.indexOf("SM-N900S") > -1)
+		,isGplayer1	: (_ua.indexOf("YP-GP1") > -1)		
 		// @ * Mobile	| LG
 		,isLGOptimusLTE : (_ua.indexOf("LG-LU6200") > -1)
 		// @ * Mobile	| Apple
