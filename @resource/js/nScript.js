@@ -21,6 +21,10 @@
 
 	// alert(_ua)
 
+	var _ua = $.extend($.ua,{
+		return navigator.userAgent.toUpperCase();
+	})
+
 	$.extend($.browser,{
 		// @ Mobile WebDevice
 		// @ * Common
