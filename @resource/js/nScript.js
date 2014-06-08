@@ -19,11 +19,7 @@
 ;(function($){
 	var _ua = navigator.userAgent.toUpperCase();
 
-	// alert(_ua)
-
-	var $.ua = $.extend({
-		return navigator.userAgent.toUpperCase();
-	})
+	alert(_ua)
 
 	$.extend($.browser,{
 		// @ Mobile WebDevice

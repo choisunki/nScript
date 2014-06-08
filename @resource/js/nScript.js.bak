@@ -21,7 +21,7 @@
 
 	// alert(_ua)
 
-	var _ua = $.extend($.ua,{
+	var $.ua = $.extend({
 		return navigator.userAgent.toUpperCase();
 	})
 
