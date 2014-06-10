@@ -174,7 +174,6 @@
 		}
 	});
 
-
 	// @ 140107 Choi Sunki
 	// @ background Show/Hide
 	// @ $(obj).nholder();
