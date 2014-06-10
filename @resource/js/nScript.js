@@ -307,6 +307,10 @@
 				,$exp	= $item.find(options.expand)
 				,$a		= $item.find(options.anhor);
 
+			if(!$exp.is(':hidden')) {
+				$exp.hide();
+			}
+
 			$a.on('click',function(e){
 				e.preventDefault();
 				var idx = $(this).parent().parent().index()
