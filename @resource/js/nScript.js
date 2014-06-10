@@ -288,6 +288,46 @@
 		});
 	};
 
+	// ==============================
+	// @ 게시판 기능 정의 2014-06-10
+	// ==============================
+	$.extend({
+		boardToggle : function(opts) {
+			var settings = {
+				wrap	: '.board.toggle'
+				,item	: '.item'
+				,expand	: 'dd'
+				,anchor	: 'dt a'
+			};
+
+			var options = $.extend(settings, opts);
+
+			var $wrap	= $(options.wrap)
+				,$item	= $wrap.find(options.item)
+				,$exp	= $item.find(options.expand)
+				,$a		= $item.find(options.anhor);
+
+			$a.on('click',function(e){
+				e.preventDefault();
+				var idx = $(this).parent().parent().index()
+					,exp	= $(this).parent().siblings('dd');
+
+				if($(this).parent().parent().hasClass('act')) {
+					exp.stop(true, true).slideUp(400,'easeOutQuint',function(){
+						$(this).parent().removeClass('act');
+					});
+				} else {
+					$exp.stop(true, true).slideUp(400,'easeOutQuint',function(){
+						$(this).parent().removeClass('act');
+					});
+					exp.stop(true, true).slideDown(500,'easeOutQuint',function(){
+						$(this).parent().addClass('act');
+					});
+				}
+			}) // Click End
+		}
+	})
+
 })(jQuery);
 
 ;(function($){
