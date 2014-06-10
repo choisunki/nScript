@@ -288,37 +288,6 @@
 		});
 	};
 
-	// @ 140610 Choi Sunki
-	// ==============================
-	// @ 게시판 기능 정의
-	// ==============================
-	$.extend({
-		bdToggle : function(){
-			var $wrap	= $('.board.toggle')
-				,$item	= $wrap.find('.item')
-				,$exp	= $item.find('dd')
-				,$a		= $item.find('dt > a')
-
-			$a.on('click',function(e){
-				e.preventDefault();
-				var idx = $(this).parent().parent().index()
-					,exp	= $(this).parent().siblings('dd');
-
-				if($(this).parent().parent().hasClass('act')) {
-					exp.stop(true, true).slideUp(400,'easeOutQuint',function(){
-						$(this).parent().removeClass('act');
-					});
-				} else {
-					$exp.stop(true, true).slideUp(400,'easeOutQuint',function(){
-						$(this).parent().removeClass('act');
-					});
-					exp.stop(true, true).slideDown(500,'easeOutQuint',function(){
-						$(this).parent().addClass('act');
-					});
-				}
-			});
-		}
-	});
 })(jQuery);
 
 ;(function($){
