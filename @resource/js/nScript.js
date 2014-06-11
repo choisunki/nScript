@@ -307,6 +307,8 @@
 				,$exp	= $item.find(options.expand)
 				,$a		= $item.find(options.anhor);
 
+			alert($wrap)
+
 			$a.on('click',function(e){
 				e.preventDefault();
 				var idx = $(this).parent().parent().index()
